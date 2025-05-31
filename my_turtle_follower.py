@@ -9,12 +9,15 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 import math
 import random
 
+# This program controls multiple follower turtles to chase a particular turtle. The name of the turtle that will be chased and the names of the follower turtes
+# can be specified in the main function.
+
 class FollowerTurtle(Node):
 
     def __init__(self, main_turtle, follower_turtle, node_name):
 
 
-        #assign random values of linear and angular velocities to each follower turtle so that keep distance from each other
+        #assign random values of linear and angular velocities to each follower turtle so that they keep distance from each other
         random_angular_velocities = [0.75, 0.80, 1.00, 1.25, 1.50, 1.75, 2.00, 2.50, 3.00, 3.50]
         random_linear_velocities = [0.25, 0.30, 0.40, 0.45, 0.50, 0.60, 0.75, 0.80, 0.90, 1.00]
 
