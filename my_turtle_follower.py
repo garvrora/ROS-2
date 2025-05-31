@@ -9,7 +9,7 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 import math
 import random
 
-# This program controls multiple follower turtles to chase a particular turtle. The name of the turtle that will be chased and the 
+# This program controls multiple follower turtles to chase a particular turtle. The names of the turtles that will be chased and the 
 # names of the follower turtes can be specified in the main function.
 
 class FollowerTurtle(Node):
@@ -97,11 +97,12 @@ class FollowerTurtle(Node):
 def main(args=None):
 
     rclpy.init(args = args)
-    followers = ['turtle2', 'turtle3', 'turtle4', 'turtle5', 'turtle6', 'turtle7', 'turtle8', 'turtle9', 'turtle10']
+    followers = ['turtle2', 'turtle4', 'turtle6']
+    main_turtles = ['turtle1', 'turtle3', 'turtle5']
     nodes = []
     
-    for i, turtle in enumerate(followers):
-        node = FollowerTurtle(main_turtle = 'turtle1', follower_turtle = turtle, node_name = f'Follower{i+1}')
+    for i, (m_turtle, f_turtle) in enumerate(zip(main_turtles, followers)):
+        node = FollowerTurtle(main_turtle = m_turtle, follower_turtle = f_turtle, node_name = f'Follower{i+1}')
         nodes.append(node)
 
     executor = MultiThreadedExecutor()
