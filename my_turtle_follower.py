@@ -9,8 +9,8 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 import math
 import random
 
-# This program controls multiple follower turtles to chase a particular turtle. The names of the turtles that will be chased and the 
-# names of the follower turtes can be specified in the main function.
+# This program controls multiple follower turtles to chase leader turtles. The names of the turtles that will be chased and the 
+# names of the follower turtles can be specified in the main function.
 
 class FollowerTurtle(Node):
 
